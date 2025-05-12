@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Header.css
+.header-container {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 0 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
+}
+
+.menu-container {
+    flex: 2;
+}
+
+.booking-button {
+    background: black !important;
+    border: none !important;
+    color: #fff !important;
+    font-weight: bold !important;
+    padding: 8px 20px !important;
+}
+
+.booking-button:hover {
+    background: #333 !important;
+} */
