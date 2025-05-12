@@ -23,7 +23,7 @@ import CheckoutPage from './pages/checkout.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <HomePage />,
   },
   {
     path: "/homepage",
