@@ -1,11 +1,12 @@
 import { DownOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 const MenuShop = () => {
     return (
         <li className="relative hover:cursor-pointer group">
-            <a className="leading-[100px] text-[#273171] uppercase font-semibold group-hover:text-[#53a0e8]" href="">
+            <Link to="/shop" className="leading-[100px] text-[#273171] uppercase font-semibold group-hover:text-[#53a0e8]">
                 Cửa Hàng <DownOutlined />
-            </a>
+            </Link>
             <div className="absolute top-[75px] border border-[#273172] bg-[#f4f4f4] hidden group-hover:block">
                 <ul className="block">
                     <li className="relative hover:bg-[#eaeaea] py-[10px] mt-[10px] px-[10px] group/submenu">

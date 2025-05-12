@@ -67,7 +67,7 @@ const RegisterApp = () => {
 
         try {
             // Gọi API đăng ký
-            const response = await fetch('http://localhost:8080/api/user/register', {
+            const response = await fetch('http://localhost:8080/api/users/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -114,6 +114,16 @@ const RegisterApp = () => {
                 password: '',
                 confirmPassword: ''
             });
+
+            // Chuyển hướng đến trang đăng nhập sau 1.5 giây
+            setTimeout(() => {
+                setIsNavigating(true); // Bắt đầu loading
+                // Thêm delay 500ms để hiển thị loading
+                setTimeout(() => {
+                    window.scrollTo(0, 0); // Reset vị trí scroll về đầu trang
+                    navigate('/login');
+                }, 500);
+            }, 1500);
 
         } catch (error) {
             // Xử lý lỗi kết nối

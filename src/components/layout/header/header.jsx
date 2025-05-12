@@ -3,10 +3,19 @@ import React, { useState, useEffect } from "react";
 import Icon from "./icon";
 import MenuHeader from "./menuheader";
 import LoginHeader from "./loginheader";
+import AvatarHeader from "./avatarHeader";
+
 const AppHeader = () => {
+    // State để kiểm tra xem người dùng đã đăng nhập hay chưa
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const [isScrolled, setIsScrolled] = useState(false);
+
     useEffect(() => {
+        // Kiểm tra xem có token trong localStorage không
+        const token = localStorage.getItem('token');
+        setIsLoggedIn(!!token); // Chuyển token thành giá trị boolean
+
         const handleScroll = () => {
             if (window.scrollY > 50) {
                 setIsScrolled(true);
@@ -33,7 +42,7 @@ const AppHeader = () => {
             {/* // <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#ffffffd8] md:bg-[#03001417] md:backdrop-blur-md z-50 px-10"> */}
             <Icon />
             <MenuHeader />
-            <LoginHeader />
+            {isLoggedIn ? <AvatarHeader /> : <LoginHeader />}
         </div>
     );
 };

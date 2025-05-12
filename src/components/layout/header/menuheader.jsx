@@ -10,17 +10,14 @@ const MenuHeader = () => {
     // Hàm xử lý chuyển hướng đến trang chủ
     const handleHomeClick = () => {
         window.scrollTo(0, 0); // Reset vị trí scroll về đầu trang
+        navigate('/homepage');
 
-        // Kiểm tra token để xác định trạng thái đăng nhập
-        const token = localStorage.getItem('token');
+    };
 
-        if (token) {
-            // Nếu đã đăng nhập, chuyển hướng đến trang homeLogin
-            navigate('/homeLogin');
-        } else {
-            // Nếu chưa đăng nhập, chuyển hướng đến trang homepage
-            navigate('/homepage');
-        }
+    // Hàm xử lý chuyển hướng đến trang đặt lịch
+    const handleAppointmentClick = () => {
+        window.scrollTo(0, 0); // Reset vị trí scroll về đầu trang
+        navigate('/appointment'); // Chuyển hướng đến trang đặt lịch
     };
 
     return (
@@ -32,7 +29,7 @@ const MenuHeader = () => {
                 <MenuShop />
                 <MenuBlog />
                 <li><a className="leading-[100px] text-[#273171] uppercase font-semibold hover:text-[#53a0e8]" href="">Liên Hệ</a></li>
-                <li><a className="leading-[100px] text-[#273171] uppercase font-semibold hover:text-[#53a0e8]" href="">Đặt lịch</a></li>
+                <li><a className="leading-[100px] text-[#273171] uppercase font-semibold hover:text-[#53a0e8] cursor-pointer" onClick={handleAppointmentClick}>Đặt lịch</a></li>
             </ul>
         </div>
     );

@@ -1,9 +1,18 @@
 import { DownOutlined } from "@ant-design/icons";
+import { useNavigate } from 'react-router-dom';
 
 const MenuBlog = () => {
+    const navigate = useNavigate(); // Hook để điều hướng
+
+    // Hàm xử lý chuyển hướng đến trang blog
+    const handleBlogClick = () => {
+        window.scrollTo(0, 0); // Reset vị trí scroll về đầu trang
+        navigate('/blog'); // Chuyển hướng đến trang blog
+    };
+
     return (
         <li className="relative hover:cursor-pointer group">
-            <a className="leading-[100px] text-[#273171] uppercase font-semibold group-hover:text-[#53a0e8]" href="">
+            <a className="leading-[100px] text-[#273171] uppercase font-semibold group-hover:text-[#53a0e8]" onClick={handleBlogClick}>
                 Blog <DownOutlined />
             </a>
             <div className="absolute top-[75px] border border-[#273172] bg-[#f4f4f4] hidden group-hover:block">

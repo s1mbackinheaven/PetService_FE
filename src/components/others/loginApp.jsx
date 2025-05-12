@@ -46,7 +46,7 @@ const LoginApp = () => {
     setErrorMessage(''); // Reset error message
 
     try {
-      const response = await fetch('http://localhost:8080/api/user/login', {
+      const response = await fetch('http://localhost:8080/api/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ const LoginApp = () => {
         // Thêm delay 500ms để hiển thị loading
         setTimeout(() => {
           window.scrollTo(0, 0); // Reset vị trí scroll về đầu trang
-          navigate('/homeLogin'); // Chuyển hướng đến trang homeLogin
+          navigate('/homepage'); // Chuyển hướng đến trang homeLogin
         }, 500);
       }, 1000);
 
